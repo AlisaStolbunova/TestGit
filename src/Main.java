@@ -94,12 +94,7 @@ equals(String,string), equalsIgnoreCase(String string), length().*/
                     case 4:
                         System.out.println(number + " рубля");
                         break;
-                    case 0:
-                    case 5:
-                    case 6:
-                    case 7:
-                    case 8:
-                    case 9:
+                    default:
                         System.out.println(number + " рублей");
                         break;
                 }

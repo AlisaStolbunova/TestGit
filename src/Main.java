@@ -5,7 +5,8 @@ public class Main {
     public static void main(String[] args) {
         // compareString();
         // choiceCase();
-        choiceCaseSwitch();
+        //choiceCaseSwitch();
+        kindOfYear();
     }
 
 
@@ -102,6 +103,34 @@ equals(String,string), equalsIgnoreCase(String string), length().*/
         }
 
         sc.close();
+    }
+
+    /* 3. Написать программу, которая считывает год, введённый пользователем, и определяет, является ли этот год високосным.
+    Год считается високосным, если он делится без остатка на 4. Однако, если год также делится на 100, то этот год не високосный,
+    за исключением годов, делящихся на 400.
+    Например:
+    1992 -високосный
+    1900-не високосный
+    2000 -високосный */
+
+    public static void kindOfYear() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input year: ");
+        int year = sc.nextInt();
+        sc.close();
+
+        if (year % 100 == 0) {
+            if (year % 4 == 0 && year % 400 == 0) {
+                System.out.println("Leap year");
+            } else {
+                System.out.println("Regular year");
+            }
+        } else if (year % 4 == 0) {
+            System.out.println("Leap year");
+        } else {
+            System.out.println("Regular year");
+        }
+
     }
 
 

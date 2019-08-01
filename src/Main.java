@@ -3,8 +3,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        compareString();
-        choiceCase();
+        // compareString();
+        // choiceCase();
+        choiceCaseSwitch();
     }
 
 
@@ -13,7 +14,7 @@ public class Main {
 -"Хорошо. Почти одинаковы" Если они отличаются, но одной длины -"Ну, хотя бы они одной длины" ИспользоватьметодыклассаString:
 equals(String,string), equalsIgnoreCase(String string), length().*/
 
-    public static void compareString(){
+    public static void compareString() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите первую строку: ");
         String str1 = sc.next();
@@ -21,13 +22,11 @@ equals(String,string), equalsIgnoreCase(String string), length().*/
         String str2 = sc.next();
         sc.close();
 
-        if(str1.equals(str2)){
+        if (str1.equals(str2)) {
             System.out.println("Отлично! Слова одинаковы");
-        }
-        else if(str1.equalsIgnoreCase(str2)){
+        } else if (str1.equalsIgnoreCase(str2)) {
             System.out.println("Хорошо. Почти одинаковы");
-        }
-        else if(str1.length()==str2.length()){
+        } else if (str1.length() == str2.length()) {
             System.out.println("Ну, хотя бы они одной длины");
         }
     }
@@ -38,16 +37,16 @@ equals(String,string), equalsIgnoreCase(String string), length().*/
     a. Использовать конструкцию if-else.
     b. Модифицировать в switch в отдельном файле*/
 
-    public static void choiceCase(){
+    public static void choiceCase() {
         String str;
         int number;
         boolean flag = true;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите целое число: ");
-        while(flag) {
+        while (flag) {
             str = sc.next();
-            if(str.equals("exit")){
+            if (str.equals("exit")) {
                 flag = false;
                 break;
             }
@@ -67,6 +66,48 @@ equals(String,string), equalsIgnoreCase(String string), length().*/
         sc.close();
     }
 
+    public static void choiceCaseSwitch() {
+        String str;
+        int number;
+        boolean flag = true;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите целое число: ");
+        while (flag) {
+            str = sc.next();
+            if (str.equals("exit")) {
+                flag = false;
+                break;
+            }
+            number = Integer.parseInt(str);
+
+            if (number % 100 >= 11 && number % 100 <= 14) {
+                System.out.println(number + " рублей");
+
+            } else {
+                switch (number % 10) {
+                    case 1:
+                        System.out.println(number + " рубль");
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                        System.out.println(number + " рубля");
+                        break;
+                    case 0:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                        System.out.println(number + " рублей");
+                        break;
+                }
+            }
+        }
+
+        sc.close();
+    }
 
 
 }

@@ -1,3 +1,5 @@
+package work.home.lesson02;
+
 import java.util.Scanner;
 
 public class Main {
@@ -6,7 +8,8 @@ public class Main {
         // compareString();
         // choiceCase();
         //choiceCaseSwitch();
-        kindOfYear();
+        //kindOfYear();
+        trueDate();
     }
 
 
@@ -115,25 +118,81 @@ equals(String,string), equalsIgnoreCase(String string), length().*/
 
     public static void kindOfYear() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Input year: ");
-        int year = sc.nextInt();
-        sc.close();
+        boolean flag = true;
+        String str;
+        int year;
 
-        if (year % 100 == 0) {
-            if (year % 4 == 0 && year % 400 == 0) {
+        while (flag) {
+            System.out.println("Input year: ");
+            str = sc.next();
+            if (str.equals("exit")) {
+                flag = false;
+                break;
+            }
+            year = Integer.parseInt(str);
+
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 4 == 0 && year % 100 == 0 && year % 400 == 0)) {
                 System.out.println("Leap year");
             } else {
                 System.out.println("Regular year");
             }
-        } else if (year % 4 == 0) {
-            System.out.println("Leap year");
-        } else {
-            System.out.println("Regular year");
         }
-
+        sc.close();
     }
 
 
+    /*4*. Написать программу, которая считывает число, месяц и год, введённые пользователем в виде трёх целых чисел.
+    Программа должна определять, является ли введённая дата реальной и выводить результат.
+    Использовать следующую информацию:
+    Январь, март, май, июль, август, октябрь, декабрь - 31 день
+    Апрель, июнь, сентябрь, ноябрь - 30 дней
+    Февраль - 28 дней в обычный год, 29 дней в високосный */
+
+    public static void trueDate() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input day:");
+        int day = sc.nextInt();
+        System.out.println("Input month:");
+        int month = sc.nextInt();
+        System.out.println("Input year");
+        int year = sc.nextInt();
+        sc.close();
+
+        if (month == 2) {
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 4 == 0 && year % 100 == 0 && year % 400 == 0)) {
+                if (day > 0 && day < 30) {
+                    System.out.println("True date");
+                } else {
+                    System.out.println("Bad date");
+                }
+            } else if (day > 0 && day < 29) {
+                System.out.println("True date");
+            } else {
+                System.out.println("Bad date");
+            }
+        } else {
+            if (day == 31) {
+                switch (month) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        System.out.println("True date");
+                        break;
+                    default:
+                        System.out.println("Bad date");
+                }
+
+            } else if (day > 0 && day < 31 && month > 0 && month <= 12) {
+                System.out.println("True date");
+            } else {
+                System.out.println("Bad date");
+            }
+        }
+    }
 }
 
 

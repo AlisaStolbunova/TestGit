@@ -10,12 +10,15 @@ public class Main {
         printArray(array);
         printBackward(array);
         naturalNumberArray();*/
+        arraySum();
         //arrayThreeNumber();
         //butterflyArray();
         //twoArrayEquals();
         //printRandomCard();
         //listOfCards();
-        simpleNumber();
+        //simpleNumber();
+        //forFactorial();
+        //whileFactorial();
 
     }
 
@@ -72,8 +75,110 @@ public class Main {
 
     public static void arraySum() {
         int[] array = createArray();
+        int sum = 0;
+        int min = minArray(array);
+        System.out.println("min = " + min);
+        int max = maxArray(array);
+        System.out.println("max = " + max);
+        int j = 0;
+        int k = 0;
+        int countMax = 0;
+        int countMin = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == min) {
+                countMin++;
+            }
+            if (array[i] == max) {
+                countMax++;
+            }
+        }
+
+        int[] indexesMax = new int[countMax];
+        int[] indexesMin = new int[countMin];
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == min) {
+                indexesMin[j] = i;
+                j++;
+            }
+            if (array[i] == max) {
+                indexesMax[k] = i;
+                k++;
+            }
+        }
+
+        System.out.println("indexesMin: ");
+        printArray(indexesMin);
+        System.out.println("indexesMax: ");
+        printArray(indexesMax);
+
+
+        /*int minLength = 0;
+        int indexStart = indexesMin[0];
+        int indexEnd = indexesMax[0];
+
+        for (int i = 0; i < indexesMin.length; i++) {
+            for (j = 0; j < indexesMax.length - 1; j++) {
+                if (Math.abs(indexesMin[i] - indexesMax[j]) > Math.abs(indexesMin[i] - indexesMax[j + 1])) {
+                    minLength = Math.abs(indexesMin[i] - indexesMax[j + 1]);
+                    indexStart = i;
+                    indexEnd = j + 1;
+                } else {
+                    minLength = Math.abs(indexesMin[i] - indexesMax[j]);
+                    indexStart = i;
+                    indexEnd = j;
+                }
+            }
+        }*/
+        for (int i = 0; i < indexesMin.length; i++) {
+            for (int m = indexesMin[i]; m < indexesMax[i] && m< indexesMin[i]+1 ; m++) {
+                sum += array[m];
+            }
+        }
+
+         /*   for (int i = 0, y = 0; i < indexesMin.length && y < indexesMax.length; i++, y++) {
+                if (indexesMin[i] > indexesMax[y]) {
+                    for (int x = indexesMax[y] + 1; x < indexesMin[i]; x++) {
+                        sum += array[x];
+                    }
+                } else {
+                    for (int x = indexesMin[i] + 1; x < indexesMax[y]; x++) {
+                        sum += array[indexesMin[i] + 1];
+                    }
+                }
+            }
+
+        /*System.out.println("minLength = " + minLength);
+        System.out.println("index start: " + indexStart);
+        System.out.println("index end: " + indexEnd);
+
+        for (int i = indexStart; i < indexEnd; i++) {
+            sum += array[i + 1];
+        }*/
+
+        System.out.println("Sum = " + sum);
+
 
     }
+
+
+    public static int maxArray(int[] array) {
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            max = max < array[i] ? array[i] : max;
+        }
+        return max;
+    }
+
+    public static int minArray(int[] array) {
+        int min = array[0];
+        for (int i = 1; i < array.length; i++) {
+            min = min > array[i] ? array[i] : min;
+        }
+        return min;
+    }
+
+
 
     /* 4. Создать массив из 3 случайных целых чисел из отрезка [10;99], вывести его на экран в строку.
     Определить и вывести на экран сообщение о том, является ли массив строго возрастающей последовательностью */
@@ -262,7 +367,7 @@ public class Main {
         int count;
         System.out.println("Input number: ");
         while (flag) {
-            count=0;
+            count = 0;
             str = sc.next();
             if (str.equals("exit")) {
                 flag = false;
@@ -284,6 +389,56 @@ public class Main {
     }
 
     /* Написать алгоритм расчета факториала , используя циклы (for и while) */
+
+    public static void forFactorial() {
+        Scanner sc = new Scanner(System.in);
+        boolean flag = true;
+        String str;
+        int num;
+        long f;
+        System.out.println("Input number: ");
+        while (flag) {
+            f = 1;
+            str = sc.next();
+            if (str.equals("exit")) {
+                flag = false;
+                break;
+            }
+            num = Integer.parseInt(str);
+            for (int i = 1; i <= num; i++) {
+                f *= i;
+            }
+            System.out.println("!" + num + " = " + f);
+        }
+        sc.close();
+    }
+
+    public static void whileFactorial() {
+        Scanner sc = new Scanner(System.in);
+        boolean flag = true;
+        String str;
+        int num, i;
+        long f;
+        System.out.println("Input number: ");
+        while (flag) {
+            f = 1;
+            i = 1;
+            str = sc.next();
+            if (str.equals("exit")) {
+                flag = false;
+                break;
+            }
+            num = Integer.parseInt(str);
+            while (i <= num) {
+                f *= i;
+                i++;
+            }
+            System.out.println("!" + num + " = " + f);
+        }
+        sc.close();
+    }
+
+
 }
 
 

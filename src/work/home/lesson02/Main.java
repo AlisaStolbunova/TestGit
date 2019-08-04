@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        // compareString();
-        // choiceCase();
-        //choiceCaseSwitch();
-        //kindOfYear();
+        compareString();
+        choiceCase();
+        choiceCaseSwitch();
+        kindOfYear();
         trueDate();
     }
 

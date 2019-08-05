@@ -107,10 +107,30 @@ public class Main {
             }
         }
 
-        System.out.println("indexesMin: ");
+        /*System.out.println("indexesMin: ");
         printArray(indexesMin);
         System.out.println("indexesMax: ");
-        printArray(indexesMax);
+        printArray(indexesMax);*/
+
+        boolean flagMax;
+        int SUM = 0;
+        for (int i = 0; i < array.length; i++) {
+            flagMax = false;
+            if (array[i] == min) {
+                for (int p = i + 1; p < array.length; p++) {
+                    if (array[p] == max) {
+                        flagMax = true;
+                    }
+                    if (array[p] == min || array[p] == max) {
+                        break;
+                    }
+                    sum += array[p];
+                }
+            }
+            if (flagMax) {
+                SUM += sum;
+            }
+        }
 
 
         /*int minLength = 0;
@@ -129,14 +149,14 @@ public class Main {
                     indexEnd = j;
                 }
             }
-        }*/
+        }
         for (int i = 0; i < indexesMin.length; i++) {
             for (int m = indexesMin[i]; m < indexesMax[i] && m< indexesMin[i]+1 ; m++) {
                 sum += array[m];
             }
-        }
+        }*/
 
-         /*   for (int i = 0, y = 0; i < indexesMin.length && y < indexesMax.length; i++, y++) {
+           /*for (int i = 0, y = 0; i < indexesMin.length && y < indexesMax.length; i++, y++) {
                 if (indexesMin[i] > indexesMax[y]) {
                     for (int x = indexesMax[y] + 1; x < indexesMin[i]; x++) {
                         sum += array[x];
@@ -156,7 +176,7 @@ public class Main {
             sum += array[i + 1];
         }*/
 
-        System.out.println("Sum = " + sum);
+        System.out.println("Sum = " + SUM);
 
 
     }

@@ -74,45 +74,14 @@ public class Main {
     не включая минимальное и максимальное значение */
 
     public static void arraySum() {
-        //int[] array = createArray();
-        int[] array = {0, 2, 3, 9, 1, 1, 1, 0, 1, 2, 9};
+        int[] array = createArray();
+        //int[] array = {0, 1, 5, 9, 7, 9, 0, 4, 3, 1, 9, 0};
 
         int sum = 0;
         int min = minArray(array);
         System.out.println("min = " + min);
         int max = maxArray(array);
         System.out.println("max = " + max);
-        /*int j = 0;
-        int k = 0;
-        int countMax = 0;
-        int countMin = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == min) {
-                countMin++;
-            }
-            if (array[i] == max) {
-                countMax++;
-            }
-        }
-
-        int[] indexesMax = new int[countMax];
-        int[] indexesMin = new int[countMin];
-
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == min) {
-                indexesMin[j] = i;
-                j++;
-            }
-            if (array[i] == max) {
-                indexesMax[k] = i;
-                k++;
-            }
-        }
-
-        System.out.println("indexesMin: ");
-        printArray(indexesMin);
-        System.out.println("indexesMax: ");
-        printArray(indexesMax);*/
 
         boolean flagMax;
         int SUM = 0;
@@ -135,53 +104,7 @@ public class Main {
             }
         }
 
-
-        /*int minLength = 0;
-        int indexStart = indexesMin[0];
-        int indexEnd = indexesMax[0];
-
-        for (int i = 0; i < indexesMin.length; i++) {
-            for (j = 0; j < indexesMax.length - 1; j++) {
-                if (Math.abs(indexesMin[i] - indexesMax[j]) > Math.abs(indexesMin[i] - indexesMax[j + 1])) {
-                    minLength = Math.abs(indexesMin[i] - indexesMax[j + 1]);
-                    indexStart = i;
-                    indexEnd = j + 1;
-                } else {
-                    minLength = Math.abs(indexesMin[i] - indexesMax[j]);
-                    indexStart = i;
-                    indexEnd = j;
-                }
-            }
-        }
-        for (int i = 0; i < indexesMin.length; i++) {
-            for (int m = indexesMin[i]; m < indexesMax[i] && m< indexesMin[i]+1 ; m++) {
-                sum += array[m];
-            }
-        }*/
-
-           /*for (int i = 0, y = 0; i < indexesMin.length && y < indexesMax.length; i++, y++) {
-                if (indexesMin[i] > indexesMax[y]) {
-                    for (int x = indexesMax[y] + 1; x < indexesMin[i]; x++) {
-                        sum += array[x];
-                    }
-                } else {
-                    for (int x = indexesMin[i] + 1; x < indexesMax[y]; x++) {
-                        sum += array[indexesMin[i] + 1];
-                    }
-                }
-            }
-
-        /*System.out.println("minLength = " + minLength);
-        System.out.println("index start: " + indexStart);
-        System.out.println("index end: " + indexEnd);
-
-        for (int i = indexStart; i < indexEnd; i++) {
-            sum += array[i + 1];
-        }*/
-
         System.out.println("Sum = " + SUM);
-
-
     }
 
 

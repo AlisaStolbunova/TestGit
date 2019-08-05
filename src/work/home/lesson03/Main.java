@@ -13,9 +13,9 @@ public class Main {
         twoDimArrayEquals();
        /*  printRandomCard();
         listOfCards();
-        simpleNumber();
-        forFactorial();
-        whileFactorial();*/
+        simpleNumber();*/
+        // forFactorial();
+        // whileFactorial();
 
     }
 
@@ -200,13 +200,7 @@ public class Main {
 
     /* 6. Написать метод equals, который определяет, равны ли между собой соответствующие элементы 2-хдвумерных массивов.*/
 
-    public static int[][] twoDimArrayGeneration() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Введите количество строк: ");
-        int size1 = sc.nextInt();
-        System.out.print("Введите количество столбцов: ");
-        int size2 = sc.nextInt();
-        // sc.close();
+    public static int[][] twoDimArrayGeneration(int size1, int size2) {
         int[][] array = new int[size1][size2];
         for (int i = 0; i < size1; i++) {
             for (int j = 0; j < array[i].length; j++) {
@@ -226,22 +220,28 @@ public class Main {
     }
 
     public static void twoDimArrayEquals() {
-        int[][] array1 = twoDimArrayGeneration();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введите количество строк: ");
+        int size1 = sc.nextInt();
+        System.out.print("Введите количество столбцов: ");
+        int size2 = sc.nextInt();
+        sc.close();
+
+        int[][] array1 = twoDimArrayGeneration(size1, size2);
+        System.out.println("Array1: ");
         twoDimArrayPrint(array1);
-        int[][] array2 = twoDimArrayGeneration();
+        int[][] array2 = twoDimArrayGeneration(size1, size2);
+        System.out.println("Array2: ");
         twoDimArrayPrint(array2);
 
         for (int i = 0; i < array1.length; i++) {
-            if (array1[i].length == array2[i].length) {
-                for (int j = 0; j < array1.length; j++) {
-                    if (array1[i][j] == array2[i][j]) {
-                        System.out.println("Элементы равны");
-                    } else {
-                        System.out.println("Элементы не равны");
-                    }
+            for (int j = 0; j < array1[i].length; j++) {
+                if (array1[i][j] == array2[i][j]) {
+                    System.out.println("[" + i+ "] [" + j +"] - Элементы равны");
+                } else {
+                    System.out.println("[" + i+ "] [" + j +"] -Элементы не равны");
                 }
-            } else {
-                System.out.println("Массивы разной длины");
+
             }
         }
 
@@ -359,16 +359,14 @@ public class Main {
 
     public static void forFactorial() {
         Scanner sc = new Scanner(System.in);
-        boolean flag = true;
         String str;
         int num;
         long f;
         System.out.println("Input number: ");
-        while (flag) {
+        while (true) {
             f = 1;
             str = sc.next();
             if (str.equals("exit")) {
-                flag = false;
                 break;
             }
             num = Integer.parseInt(str);
@@ -382,17 +380,15 @@ public class Main {
 
     public static void whileFactorial() {
         Scanner sc = new Scanner(System.in);
-        boolean flag = true;
         String str;
         int num, i;
         long f;
         System.out.println("Input number: ");
-        while (flag) {
+        while (true) {
             f = 1;
             i = 1;
             str = sc.next();
             if (str.equals("exit")) {
-                flag = false;
                 break;
             }
             num = Integer.parseInt(str);

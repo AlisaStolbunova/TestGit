@@ -80,7 +80,7 @@ public class Main {
         System.out.println("min = " + min);
         int max = maxArray(array);
         System.out.println("max = " + max);
-        int j = 0;
+        /*int j = 0;
         int k = 0;
         int countMax = 0;
         int countMin = 0;
@@ -107,7 +107,7 @@ public class Main {
             }
         }
 
-        /*System.out.println("indexesMin: ");
+        System.out.println("indexesMin: ");
         printArray(indexesMin);
         System.out.println("indexesMax: ");
         printArray(indexesMax);*/
@@ -117,14 +117,14 @@ public class Main {
         for (int i = 0; i < array.length; i++) {
             flagMax = false;
             if (array[i] == min) {
-                for (int p = i + 1; p < array.length; p++) {
-                    if (array[p] == max) {
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j] == max) {
                         flagMax = true;
                     }
-                    if (array[p] == min || array[p] == max) {
+                    if (array[j] == min || array[j] == max) {
                         break;
                     }
-                    sum += array[p];
+                    sum += array[j];
                 }
             }
             if (flagMax) {

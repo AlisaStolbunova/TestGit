@@ -5,13 +5,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        printStrBack();
-        /*naturalNumberArray();
-        arraySum();
-        arrayThreeNumber();
-        butterflyArray();
-        twoArrayEquals();
-        printRandomCard();
+        //printStrBack();
+        //naturalNumberArray();
+        //arraySum();
+        //arrayThreeNumber();
+        //butterflyArray();
+        twoDimArrayEquals();
+       /*  printRandomCard();
         listOfCards();
         simpleNumber();
         forFactorial();
@@ -140,14 +140,17 @@ public class Main {
         }
         printArray(array);
 
-        int flag = 0;
+        boolean flag = true;
         for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] < array[i + 1]) {
-                flag++;
+            if (array[i] >= array[i + 1]) {
+                flag = false;
+                break;
             }
-            if (flag == array.length - 1) {
-                System.out.println("Массив является строго возрастающей последовательностью");
-            }
+        }
+        if (flag) {
+            System.out.println("Массив является строго возрастающей последовательностью");
+        } else {
+            System.out.println("Массив не является строго возрастающей последовательностью");
         }
     }
 
@@ -197,7 +200,7 @@ public class Main {
 
     /* 6. Написать метод equals, который определяет, равны ли между собой соответствующие элементы 2-хдвумерных массивов.*/
 
-    public static int[][] twoArrayGeneration() {
+    public static int[][] twoDimArrayGeneration() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Введите количество строк: ");
         int size1 = sc.nextInt();
@@ -213,7 +216,7 @@ public class Main {
         return array;
     }
 
-    public static void twoArrayPrint(int[][] array) {
+    public static void twoDimArrayPrint(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.print(array[i][j]);
@@ -222,13 +225,27 @@ public class Main {
         }
     }
 
-    public static void twoArrayEquals() {
-        int[][] array1 = twoArrayGeneration();
-        twoArrayPrint(array1);
-        int[][] array2 = twoArrayGeneration();
-        twoArrayPrint(array2);
+    public static void twoDimArrayEquals() {
+        int[][] array1 = twoDimArrayGeneration();
+        twoDimArrayPrint(array1);
+        int[][] array2 = twoDimArrayGeneration();
+        twoDimArrayPrint(array2);
 
-        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < array1.length; i++) {
+            if (array1[i].length == array2[i].length) {
+                for (int j = 0; j < array1.length; j++) {
+                    if (array1[i][j] == array2[i][j]) {
+                        System.out.println("Элементы равны");
+                    } else {
+                        System.out.println("Элементы не равны");
+                    }
+                }
+            } else {
+                System.out.println("Массивы разной длины");
+            }
+        }
+
+        /*Scanner sc = new Scanner(System.in);
         System.out.println("Введите строку и столбец для сравнения: ");
         int str = sc.nextInt();
         int column = sc.nextInt();
@@ -237,7 +254,7 @@ public class Main {
             System.out.println("Элементы равны");
         } else {
             System.out.println("Элементы не равны");
-        }
+        }*/
     }
 
 

@@ -74,7 +74,9 @@ public class Main {
     не включая минимальное и максимальное значение */
 
     public static void arraySum() {
-        int[] array = createArray();
+        //int[] array = createArray();
+        int[] array = {0, 2, 3, 9, 1, 1, 1, 0, 1, 2, 9};
+
         int sum = 0;
         int min = minArray(array);
         System.out.println("min = " + min);
@@ -116,6 +118,7 @@ public class Main {
         int SUM = 0;
         for (int i = 0; i < array.length; i++) {
             flagMax = false;
+            sum = 0;
             if (array[i] == min) {
                 for (int j = i + 1; j < array.length; j++) {
                     if (array[j] == max) {

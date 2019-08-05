@@ -5,20 +5,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /*int[] array;
-        array = createArray();
-        printArray(array);
-        printBackward(array);
-        naturalNumberArray();*/
+        printStrBack();
+        /*naturalNumberArray();
         arraySum();
-        //arrayThreeNumber();
-        //butterflyArray();
-        //twoArrayEquals();
-        //printRandomCard();
-        //listOfCards();
-        //simpleNumber();
-        //forFactorial();
-        //whileFactorial();
+        arrayThreeNumber();
+        butterflyArray();
+        twoArrayEquals();
+        printRandomCard();
+        listOfCards();
+        simpleNumber();
+        forFactorial();
+        whileFactorial();*/
 
     }
 
@@ -41,6 +38,14 @@ public class Main {
 
 
     /* 1. Напишите программу, которая печатает массив сначала в обычном порядке, затем в обратном. */
+    public static void printStrBack() {
+        int[] array;
+        array = createArray();
+        System.out.println("Straight array: ");
+        printArray(array);
+        System.out.println("Backward array: ");
+        printBackward(array);
+    }
 
     public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
@@ -123,7 +128,6 @@ public class Main {
         }
         return min;
     }
-
 
 
     /* 4. Создать массив из 3 случайных целых чисел из отрезка [10;99], вывести его на экран в строку.

@@ -23,14 +23,44 @@ public class ATM {
         banknote100 += count100;
     }
 
-    public boolean withdrawMoney(int sum){
+    public boolean withdrawMoney(int sum) {
         int amount = banknote20 * 20 + banknote50 * 50 + banknote100 * 100;
-        if (sum > amount){
+        if (sum > amount) {
             return false;
         }
-        if (sum % 20 != 0 || sum % 50 != 0)
-    }
+        //if (sum % 20 != 0 || sum % 50 != 0)
+        int sum100 = 0;
+        int sum50 = 0;
+        int sum20 = 0;
+        if (sum / 100 < banknote100 * 100) {
+            sum100 = sum / 100;
+            sum -= (sum100 * 100);
+            banknote100 -= (sum100 * 100);
+            if (sum == 0) {
+                System.out.println(sum100 + " купюрами номиналом 100, ");
+                return true;
+            }
+        }
+        if (sum / 50 < banknote50 * 50 && sum / 50 !=0) {
+            sum50 = sum / 50;
+            sum -= (sum50 * 50);
+            banknote50 -= (sum50 * 50);
+            if (sum == 0)
+                System.out.println(sum50 + " купюрами номиналом 50");
+            return true;
+        }
+        if (sum / 20 < banknote20 * 20) {
+            sum20 = sum / 20;
+            sum -= (sum20 * 20);
+            banknote20 -= (sum20 * 20);
+            }
 
+        if (sum == 0) {
+            System.out.println(sum100 + " купюрами номиналом 100, " + sum50 + " купюрами номиналом 50, " + sum20 + " купюрами номиналом 20");
+            return true;
+        } else return false;
+
+    }
 
 
     public boolean moneyRequest(int allMoney, int sum, int count10, int count50, int count100) {

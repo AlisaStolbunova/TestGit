@@ -15,27 +15,20 @@ public class Time {
     int second;
 
     public Time(int hour, int minute, int second) {
-        this.hour = hour;
-        this.minute = minute;
-        this.second = second;
+        if (hour >= 0 && hour < 24 && minute >= 0 && minute < 60 && second >= 0 && second < 60) {
+            this.hour = hour;
+            this.minute = minute;
+            this.second = second;
+        }
     }
 
     public Time(int second) {
-        this.second = second;
+        if (second >= 0 && second < 60) {
+            this.second = second;
+        }
     }
 
     public void printTime() {
-//        System.out.print("Time: ");
-//        if (hour > 0){
-//            System.out.print(hour + "h");
-//        }
-//        if (hour > 0){
-//            System.out.print(hour + "h");
-//        }
-//        if (hour > 0){
-//            System.out.print(hour + "h");
-//        }
-
         System.out.println("Time: " + hour + "h " + minute + "min " + second + "s");
     }
 

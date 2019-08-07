@@ -6,10 +6,11 @@ public class Main {
     public static void main(String[] args) {
         // Time
 
+        Scanner sc = new Scanner(System.in);
         int h, m, s;
 
         System.out.println("Input time in seconds: ");
-        Scanner sc = new Scanner(System.in);
+
         Time time = new Time(sc.nextInt());
         time.printTime();
         System.out.println("in seconds:" + time.printTimeSecond());
@@ -29,7 +30,7 @@ public class Main {
 
         ATM atm = new ATM(10, 50, 100);
 
-        int count10;
+        int count20;
         int count50;
         int count100;
         int sum;
@@ -37,18 +38,20 @@ public class Main {
 
         System.out.println("Добавляем деньги в банкомат");
 
-        System.out.println("Введите количество купюр номиналом 10: ");
-        count10 = sc.nextInt();
+        System.out.println("Введите количество купюр номиналом 20: ");
+        count20 = sc.nextInt();
+        atm.add20s(count20);
         System.out.println("Введите количество купюр номиналом 50: ");
         count50 = sc.nextInt();
+        atm.add50s(count50);
         System.out.println("Введите количество купюр номиналом 100: ");
         count100 = sc.nextInt();
-
-        allMoney = atm.addMoney(count10, count50, count100);
+        atm.add100s(count100);
 
         System.out.println("Какую сумму выдать?");
         sum = sc.nextInt();
-        atm.moneyRequest(allMoney, sum, count10, count50, count100);
+        atm.withdrawMoney(sum);
+
 
         sc.close();
     }

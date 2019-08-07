@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        printStrBack();
-        //naturalNumberArray();
+        //printStrBack();
+        naturalNumberArray();
         //arraySum();
         //arrayThreeNumber();
         //butterflyArray();

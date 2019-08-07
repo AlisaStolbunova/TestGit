@@ -1,24 +1,39 @@
 package work.home.lesson4_class;
 
 public class ATM {
-    static int banknote10;
+    static int banknote20;
     static int banknote50;
     static int banknote100;
 
-    public ATM(int banknote10, int banknote50, int banknote100) {
-        this.banknote10 = banknote10;
+    public ATM(int banknote20, int banknote50, int banknote100) {
+        this.banknote20 = banknote20;
         this.banknote50 = banknote50;
         this.banknote100 = banknote100;
     }
 
-    public static int addMoney(int count10, int count50, int count100) {
-        int allMoney = 0;
-        allMoney = banknote10 * count10 + banknote50 * count50 + banknote100 * count100;
-        System.out.println("All money: " + allMoney);
-        return allMoney;
+    public void add20s(int count20) {
+        banknote20 += count20;
     }
 
-    public static boolean moneyRequest(int allMoney, int sum, int count10, int count50, int count100) {
+    public void add50s(int count50) {
+        banknote50 += count50;
+    }
+
+    public void add100s(int count100) {
+        banknote100 += count100;
+    }
+
+    public boolean withdrawMoney(int sum){
+        int amount = banknote20 * 20 + banknote50 * 50 + banknote100 * 100;
+        if (sum > amount){
+            return false;
+        }
+        if (sum % 20 != 0 || sum % 50 != 0)
+    }
+
+
+
+    public boolean moneyRequest(int allMoney, int sum, int count10, int count50, int count100) {
         if (sum < allMoney && sum % 10 == 0) {
             if (sum / 100 != 0) {
                 if (sum / 100 < count100) {

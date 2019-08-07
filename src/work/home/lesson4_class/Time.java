@@ -24,12 +24,23 @@ public class Time {
         this.second = second;
     }
 
-    public void printTime(){
+    public void printTime() {
+//        System.out.print("Time: ");
+//        if (hour > 0){
+//            System.out.print(hour + "h");
+//        }
+//        if (hour > 0){
+//            System.out.print(hour + "h");
+//        }
+//        if (hour > 0){
+//            System.out.print(hour + "h");
+//        }
+
         System.out.println("Time: " + hour + "h " + minute + "min " + second + "s");
     }
 
-    public void printTimeSecond(){
-        System.out.println("Time in seconds: " + (hour * 3600 + minute * 60 + second) + "s");
+    public int printTimeSecond() {
+        return hour * 3600 + minute * 60 + second;
     }
 
 

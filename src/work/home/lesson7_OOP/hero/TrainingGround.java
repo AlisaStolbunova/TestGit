@@ -18,13 +18,13 @@ public class TrainingGround {
         Enemy enemy = new Enemy(100);
         //hero.attackEnemy(enemy);
 
-        Warrior warrior = new Warrior("Warrior");
+        Warrior warrior = new Warrior("Warrior", 100);
         warrior.attackEnemy(enemy);
 
-        Mage mage = new Mage("Mage");
+        Mage mage = new Mage("Mage", 100);
         mage.attackEnemy(enemy);
 
-        Archer archer = new Archer("Archer");
+        Archer archer = new Archer("Archer", 100);
         archer.attackEnemy(enemy);
 
     }

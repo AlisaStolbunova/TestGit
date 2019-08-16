@@ -23,6 +23,13 @@ public class Enemy implements Mortal {
     public int getHealth() {
         return health;
     }
+    public  void attackHero(Hero h){      // abstract!!!
+        int damage;
+        System.out.println("Enemy attacks the hero!");
+        damage = (int) ((Math.random() * 90) + 10);
+        System.out.println("Damage = " + damage);
+        h.takeDamage(damage);
+    }
 
     public int takeDamage(int damage){
         return health -= damage;

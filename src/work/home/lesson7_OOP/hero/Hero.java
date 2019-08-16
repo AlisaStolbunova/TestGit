@@ -1,6 +1,6 @@
 package work.home.lesson7_OOP.hero;
 
-public class Hero {
+public abstract class Hero {
     private String name;
 
     public Hero(String name) {
@@ -11,7 +11,11 @@ public class Hero {
         return name;
     }
 
-    public void attackEnemy(){
+    public  void attackEnemy(Enemy e){      // abstract!!!
+        int damage;
         System.out.println(name + " attacks the enemy!");
+        damage = (int) ((Math.random() * 90) + 10);
+        System.out.println("Damage = " + damage);
+        e.takeDamage(damage);
     }
 }

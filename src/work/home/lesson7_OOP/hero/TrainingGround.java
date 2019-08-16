@@ -14,17 +14,18 @@ package work.home.lesson7_OOP.hero;
 
 public class TrainingGround {
     public static void main(String[] args) {
-        Hero hero = new Hero("Captain America");
-        hero.attackEnemy();
+        //Hero hero = new Hero("Captain America");
+        Enemy enemy = new Enemy(100);
+        //hero.attackEnemy(enemy);
 
         Warrior warrior = new Warrior("Warrior");
-        warrior.attackEnemy();
+        warrior.attackEnemy(enemy);
 
         Mage mage = new Mage("Mage");
-        mage.attackEnemy();
+        mage.attackEnemy(enemy);
 
         Archer archer = new Archer("Archer");
-        archer.attackEnemy();
+        archer.attackEnemy(enemy);
 
     }
 }

@@ -136,7 +136,7 @@ public class Main {
     public static void arrayThreeNumber() {
         int[] array = new int[3];
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random() * 90 + 10);
+            array[i] = (int) (Math.random() * 90 + 1);
         }
         printArray(array);
 

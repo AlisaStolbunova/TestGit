@@ -7,7 +7,7 @@ public class Mage extends Hero {
 
 
     @Override
-    public void attackEnemy() {
-        super.attackEnemy();
+    public void attackEnemy(Enemy e) {
+        super.attackEnemy(e);
     }
 }

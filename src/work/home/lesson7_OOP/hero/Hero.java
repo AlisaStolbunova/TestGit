@@ -17,23 +17,16 @@ public abstract class Hero implements Mortal {
         return health;
     }
 
-    public  void attackEnemy(Enemy e){      // abstract!!!
-        int damage;
-        System.out.println(name + " attacks the enemy!");
-        damage = (int) ((Math.random() * 90) + 10);
-        System.out.println("Damage = " + damage);
-        e.takeDamage(damage);
-    }
+    public abstract void  attackEnemy(Enemy e);
 
-    public int takeDamage(int damage){
+    public int takeDamage(int damage) {
         return health -= damage;
     }
 
     @Override
     public boolean isAlive() {
-        if(health > 0) {
+        if (health > 0) {
             return true;
-        }
-        else return false;
+        } else return false;
     }
 }

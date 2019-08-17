@@ -5,8 +5,11 @@ public class Mage extends Hero {
         super(name, health);
     }
 
-    @Override
-    public void attackEnemy(Enemy e) {
-        super.attackEnemy(e);
+    public  void attackEnemy(Enemy e){
+        int damage;
+        System.out.println(getName() + " attacks the enemy!");
+        damage = (int) ((Math.random() * 90) + 10);
+        System.out.println("Damage = " + damage);
+        e.takeDamage(damage);
     }
 }

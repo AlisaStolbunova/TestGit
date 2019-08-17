@@ -23,10 +23,10 @@ public class Enemy implements Mortal {
     public int getHealth() {
         return health;
     }
-    public  void attackHero(Hero h){      // abstract!!!
+    public  void attackHero(Hero h){
         int damage;
         System.out.println("Enemy attacks the hero!");
-        damage = (int) ((Math.random() * 90) + 10);
+        damage = (int) (Math.random() * 50);
         System.out.println("Damage = " + damage);
         h.takeDamage(damage);
     }
@@ -35,10 +35,4 @@ public class Enemy implements Mortal {
         return health -= damage;
     }
 
-    @Override
-    public boolean isAlive() {
-        if(health > 0)
-            return true;
-            else return false;
-    }
 }

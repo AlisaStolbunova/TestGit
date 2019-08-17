@@ -23,10 +23,4 @@ public abstract class Hero implements Mortal {
         return health -= damage;
     }
 
-    @Override
-    public boolean isAlive() {
-        if (health > 0) {
-            return true;
-        } else return false;
-    }
 }

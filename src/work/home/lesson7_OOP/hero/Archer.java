@@ -9,7 +9,7 @@ public class Archer extends Hero {
     public  void attackEnemy(Enemy e){
         int damage;
         System.out.println(getName() + " attacks the enemy!");
-        damage = (int) ((Math.random() * 90) + 10);
+        damage = (int) (Math.random() * 50);
         System.out.println("Damage = " + damage);
         e.takeDamage(damage);
     }

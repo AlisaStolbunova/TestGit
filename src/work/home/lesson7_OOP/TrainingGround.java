@@ -1,4 +1,4 @@
-package work.home.lesson7_OOP.hero;
+package work.home.lesson7_OOP;
 
 /*
 1. 1. Создать класс Hero, представляющий собой героя и содержащий поле name.

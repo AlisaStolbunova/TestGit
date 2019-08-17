@@ -1,9 +1,10 @@
-package work.home.lesson7_OOP.hero;
+package work.home.lesson7_OOP;
 
-public class Mage extends Hero {
-    public Mage(String name, int health) {
+public class Archer extends Hero {
+    public Archer(String name, int health) {
         super(name, health);
     }
+
 
     public  void attackEnemy(Enemy e){
         int damage;

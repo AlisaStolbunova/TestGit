@@ -1,4 +1,4 @@
-package work.home.lesson7_OOP.hero;
+package work.home.lesson7_OOP;
 
 /*
 3. Создать класс Enemy, представляющий собой врага и содержащий поле health (количество здоровья).

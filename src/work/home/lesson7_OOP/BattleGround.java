@@ -1,4 +1,4 @@
-package work.home.lesson7_OOP.hero;
+package work.home.lesson7_OOP;
 
 public class BattleGround {
     public static void main(String[] args) {

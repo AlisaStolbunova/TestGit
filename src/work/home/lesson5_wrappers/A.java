@@ -4,6 +4,8 @@ package work.home.lesson5_wrappers;
 перегруженные методы возвращающие результат арифметических операций над заданными полями и полями типа BigDecimal
  */
 
+import java.math.BigDecimal;
+
 public class A {
     double a;
     double b;
@@ -20,50 +22,59 @@ public class A {
         return a + b;
     }
 
-    public double res(double a, double b) {
+    public BigDecimal sum(BigDecimal a, BigDecimal b) {
+        return a.add(b);
+    }
+
+    public double sub(double a, double b) {
         return a - b;
     }
 
-    public double mult(double a, double b) {
+    public BigDecimal sub(BigDecimal a, BigDecimal b) {
+        return a.subtract(b);
+    }
+
+    public double multiply(double a, double b) {
         return a * b;
     }
 
-    public double div(double a, double b) {
-        if (b != 0)
+    public BigDecimal multiply(BigDecimal a, BigDecimal b) {
+        return a.multiply(b);
+    }
+
+    public double divide(double a, double b) {
+        if (b!=0)
             return a / b;
-        else {
-            System.out.println("Division by zero!!!");
-            return 0;
-        }
+        else
+            throw new ArithmeticException("Division by zero!");
+    }
+
+    public BigDecimal divide(BigDecimal a, BigDecimal b) {
+        if (b.signum() != 0)
+            return a.divide(b);
+        else
+            throw new ArithmeticException("Division by zero!");
     }
 
 
     public double pow(double a, double b) {
-        int c = 1;
-        for (int i = 1; i <= b; i++) {
-            c *= a;
-        }
-        return c;
+        return Math.pow(a,b) ;
     }
 
-    public double sqrt(double a) {
-        double min = 0;
-        double max = a;
-        double mid = 0;
-        for (int i = 0; i < 1000; i++) {
-            mid = (min + max) / 2;
-            if (mid * mid == a) return mid;
-            if (mid * mid > a) {
-                max = mid;
-            } else min = mid;
-        }
-        return mid;
+    public BigDecimal pow(BigDecimal a, int b) {
+        return a.pow(b);
     }
 
-    public static void main(String[] args) {
-        A a = new A();
-
-        System.out.println(a.sqrt(10000));
+    public double abs(double a){
+        return (a < 0 ? -a : a);
     }
+
+    public BigDecimal abs(BigDecimal a) {
+        return (a.signum() <  0 ? a.negate() : a) ;
+    }
+
+
+
+
 
 }

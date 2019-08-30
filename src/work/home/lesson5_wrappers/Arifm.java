@@ -4,7 +4,9 @@ import java.math.BigDecimal;
 
 public class Arifm {
     public static void main(String[] args) {
-        A a = new A();
+        A a = new A(2,1);
+        double d = a.abs(-4);
+        System.out.println(d);
         System.out.println(a.pow(2,2));
         System.out.println(a.divide(5,2));
         System.out.println(a.abs(-8));

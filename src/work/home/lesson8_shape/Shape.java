@@ -1,9 +1,16 @@
 package work.home.lesson8_shape;
 
 public abstract class Shape {
+    double x;
+    double y;
 
-    public abstract double perimeter();
+    public Shape(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
 
-    public abstract double area();
+    public abstract double getPerimeter();
+
+    public abstract double getArea();
 
 }

@@ -15,7 +15,13 @@ public class Test {
         System.out.println(str);
 
         System.out.println("************");
+
         SubEquals se = new SubEquals();
         System.out.println(se.subEquals("mama rama mama", "mama"));
+
+        System.out.println("************");
+
+        Fio fio = new Fio();
+        System.out.println(fio.returnFIO("stolbunova alisa sergeevna"));
     }
 }

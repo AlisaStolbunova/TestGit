@@ -27,5 +27,16 @@ public class Test {
         System.out.println("************");
         Words w = new Words();
         System.out.println(w.amount("mama rama   mama rama  rama mama"));
+
+        System.out.println("************");
+
+        Abc wr = new Abc();
+        String s = wr.replaceABC("aaaabccddde");
+        System.out.println(s);
+
+        System.out.println("************");
+        TenNumbers t = new TenNumbers();
+        System.out.println(t.concat(111));
+        System.out.println(t.numArray(1111));
     }
 }

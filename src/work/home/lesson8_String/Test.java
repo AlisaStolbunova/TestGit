@@ -23,5 +23,9 @@ public class Test {
 
         Fio fio = new Fio();
         System.out.println(fio.returnFIO("stolbunova alisa sergeevna"));
+
+        System.out.println("************");
+        Words w = new Words();
+        System.out.println(w.amount("mama rama   mama rama  rama mama"));
     }
 }

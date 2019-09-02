@@ -38,5 +38,6 @@ public class Test {
         TenNumbers t = new TenNumbers();
         System.out.println(t.concat(111));
         System.out.println(t.numArray(1111));
+        System.out.println(t.format(1111));
     }
 }

@@ -45,4 +45,16 @@ public class TenNumbers {
         }
         return str;
     }
+
+    public String format(long num){
+        String str = String.valueOf(num);
+        if (str.length() > 10) {
+            str = "0000000000";
+        } else {
+            if(str.length() < 10){
+                str = String.format("%10s%n", str);
+            }
+        }
+        return str;
+    }
 }

@@ -2,10 +2,10 @@ package work.home.lesson8_String;
 
 public class Test {
     public static void main(String[] args) {
-        /*TimeTest t = new TimeTest();
+        TimeTest t = new TimeTest();
         System.out.println("Plus time " + String.valueOf(t.timePlus()).concat("ms"));
         System.out.println("Concatenate time " + String.valueOf(t.timeConcat()).concat("ms"));
-        System.out.println("StringBuilder time " + String.valueOf(t.timeBuilder()).concat("ms"));*/
+        System.out.println("StringBuilder time " + String.valueOf(t.timeBuilder()).concat("ms"));
 
         System.out.println("************");
 
@@ -35,9 +35,10 @@ public class Test {
         System.out.println(s);
 
         System.out.println("************");
-        TenNumbers t = new TenNumbers();
-        System.out.println(t.concat(111));
-        System.out.println(t.numArray(1111));
-        System.out.println(t.format(1111));
+        TenNumbers tt = new TenNumbers();
+        System.out.println(tt.concat(111));
+        System.out.println(tt.stringBuilder(111));
+        System.out.println(tt.numArray(1111));
+        System.out.println(tt.format(1111));
     }
 }

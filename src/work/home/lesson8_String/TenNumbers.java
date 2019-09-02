@@ -52,7 +52,7 @@ public class TenNumbers {
             str = "0000000000";
         } else {
             if(str.length() < 10){
-                str = String.format("%10s%n", str);
+                str = String.format("%010d%n", num);
             }
         }
         return str;

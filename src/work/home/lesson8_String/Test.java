@@ -39,6 +39,6 @@ public class Test {
         System.out.println(tt.concat(111));
         System.out.println(tt.stringBuilder(111));
         System.out.println(tt.numArray(1111));
-        System.out.println(tt.format(1111));
+        System.out.println(tt.format(11));
     }
 }

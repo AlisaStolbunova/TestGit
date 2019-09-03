@@ -33,6 +33,7 @@ public class Regexpr {
     например <p id ="p1">, и замену их на простые теги абзацев <p>
      */
     public static void tegReplace(String str) {
+        System.out.println(str.replaceAll("<p[\\s\\w\\=\\\"]+>","<p>"));
 
     }
 
@@ -89,6 +90,9 @@ public class Regexpr {
         phoneNumber(str);
         System.out.println("******************");
         validIP("0.0.0.0");
+        System.out.println("******************");
+        str = "<p id =\"p1\"> <p mvkdmvkd >";
+        tegReplace(str);
 
 
     }

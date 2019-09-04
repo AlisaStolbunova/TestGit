@@ -44,7 +44,7 @@ public class Regexpr {
     Y - номер телефона */
 
     public static void phoneNumber(String str) {
-        System.out.println(str.replaceAll("(\\+375)(\\d{2})(\\d{7}\\b)", "$1 ($2) $3"));
+        System.out.println(str.replaceAll("(\\+375)(\\d{2})(\\d{3})(\\d{2})(\\d{2}\\b)", "$1 ($2)$3-$4-$5"));
     }
 
     /*
@@ -86,13 +86,15 @@ public class Regexpr {
         str = "cat 0xFF dog 0XA5 xbb oCC 0xdw 0x111";
         hexNumber(str);
         System.out.println("******************");
+        str = "<p id =\"p1\"> <p mvkdmvkd >";
+        tegReplace(str);
+        System.out.println("******************");
         str = "+375292626576 678 fgtth + 3754 +375443560742 +3752967789444";
         phoneNumber(str);
         System.out.println("******************");
         validIP("0.0.0.0");
-        System.out.println("******************");
-        str = "<p id =\"p1\"> <p mvkdmvkd >";
-        tegReplace(str);
+
+
 
 
     }

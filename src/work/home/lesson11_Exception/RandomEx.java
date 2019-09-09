@@ -5,7 +5,7 @@ package work.home.lesson11_Exception;
 */
 
 
-public class RandomThrow {
+public class RandomEx {
 
     public static void randomThrow() throws ClassNotFoundException {
         int key = (int) ((Math.random() * 3) + 1);

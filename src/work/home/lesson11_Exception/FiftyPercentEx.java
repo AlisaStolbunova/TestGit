@@ -4,7 +4,7 @@ package work.home.lesson11_Exception;
 Вызвать этот метод в конструкции try-catch-finally. Протестироватьработу блока finally
 */
 
-public class FiftyPercentThrow {
+public class FiftyPercentEx {
     public static boolean flag = true;
     public static int counter = 0;
 

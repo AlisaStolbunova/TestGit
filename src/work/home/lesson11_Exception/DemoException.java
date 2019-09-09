@@ -48,10 +48,10 @@ public class DemoException {
         MyRTException.division(5,0);
 
         System.out.println("***************6*********************");
-        RandomThrow.test();
+        RandomEx.test();
 
         System.out.println("***************7*********************");
-        FiftyPercentThrow.test();
+        FiftyPercentEx.test();
 
     }
 

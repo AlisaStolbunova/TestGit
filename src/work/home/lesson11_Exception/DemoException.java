@@ -1,10 +1,13 @@
 package work.home.lesson11_Exception;
 
 
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DemoException {
+
+    private static final Logger LOGGER = Logger.getLogger(String.valueOf(DemoException.class));
 
 
     public static void main(String[] args) {

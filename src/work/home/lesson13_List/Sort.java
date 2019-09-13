@@ -26,7 +26,13 @@ public class Sort {
     }
 
     void sort(List<Integer> list) {
-        int size = list.size();
+        list.stream()
+                .sorted((x, y) -> (y - x))
+                .forEach(System.out::print);
+
+
+    }
+       /* int size = list.size();
         for (int i = 0; i < size; i++) {
             if (list.get(i) < 0) {
                 list.add(list.get(i));
@@ -57,5 +63,5 @@ public class Sort {
         }
         printList(list);
     }*/
-    }
 }
+

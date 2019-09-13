@@ -26,10 +26,10 @@ public class Sort {
     }
 
     void sort(List<Integer> list) {
-        list.stream()
-                .sorted((x, y) -> (y - x))
-                .forEach(System.out::print);
-
+        list.sort((x, y) -> (y - x));
+        for (Integer i : list){
+            System.out.print(i + " ");
+        }
 
     }
        /* int size = list.size();

@@ -12,6 +12,5 @@ public class GenericsDemo {
         Arithmetic<Float> b = new Arithmetic<>(4.2f, 3.0f);
         System.out.println(b.getSub());
 
-
     }
 }

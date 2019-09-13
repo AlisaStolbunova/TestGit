@@ -22,7 +22,12 @@ public class Demo {
         System.out.println("Input stack size:");
         int size = sc.nextInt();
         System.out.println("Input number:");
-        stack.addToStack(stack.stack(size), sc.next());
+        try {
+            stack.addToStack(size, sc.next());
+        }catch(ArrayIndexOutOfBoundsException ex){
+            System.out.println("Incorrect number");
+        }
+
 
         SetClass set = new SetClass();
         System.out.println("Set1:");

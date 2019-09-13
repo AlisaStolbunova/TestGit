@@ -13,13 +13,13 @@ import java.util.ListIterator;
  */
 
 public class Stack {
-    List<Character> stack(int size) {
-        List<Character> stack = new ArrayList<>(size);
-        return stack;
-    }
 
-    void addToStack(List<Character> list, String str) {
+    void addToStack(int size, String str) throws ArrayIndexOutOfBoundsException {
+        List<Character> list = new ArrayList<>(size);
         char[] ch = str.toCharArray();
+        if (ch.length > size) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
 
         for (int i = 0; i < ch.length; i++) {
             list.add(ch[i]);

@@ -14,15 +14,10 @@ import java.util.regex.Pattern;
 public class FindWord {
     static void findWord() {
         String str = null;
-        Pattern pattern = Pattern.compile("[aeiou][a-z]*");
-        Matcher matcher;
-        try (BufferedReader br = new BufferedReader(new FileReader("/Users/alisa/Desktop/Courses/text.rtf"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("/Users/alisa/Desktop/Courses/text1.rtf"))) {
             while ((str = br.readLine()) != null) {
-                String[] array = str.toLowerCase().split(" ");
-                for (int i = 0; i < array.length; i++) {
-                    if (pattern.matcher(array[i]).matches())
-                        System.out.println(array[i]);
-                }
+                startVowel(str);
+                letterLastFirst(str);
             }
         } catch (FileNotFoundException ex) {
             System.out.println("File not found");
@@ -31,4 +26,29 @@ public class FindWord {
             ex.printStackTrace();
         }
     }
+
+    static void startVowel(String str) {
+        Pattern pattern = Pattern.compile("[aeiou][a-z]*");
+        Matcher matcher;
+        String[] array = str.toLowerCase().split(" ");
+        for (int i = 0; i < array.length; i++) {
+            if (pattern.matcher(array[i]).matches())
+                System.out.print(array[i] + " " + "\n");
+        }
+    }
+
+    /*
+    Задан файл с текстом, найти и вывести в консоль все слова, для которых
+    последняя буква одного слова совпадает с первой буквой следующего слова
+     */
+
+    static void letterLastFirst(String str) {
+        String[] array = str.toLowerCase().split(" ");
+        for (int i = 1; i <= array.length - 1; i++) {
+            if ( array[i - 1].charAt(array[i - 1].length() - 1) == array[i].charAt(0))
+                System.out.print(array[i - 1] + " " + array[i] + "\n");
+        }
+    }
+
+
 }

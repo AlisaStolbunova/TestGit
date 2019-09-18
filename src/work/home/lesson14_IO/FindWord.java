@@ -19,8 +19,8 @@ public class FindWord {
         try (BufferedReader br = new BufferedReader(new FileReader("/Users/alisa/Desktop/Courses/text.rtf"))) {
             while ((str = br.readLine()) != null) {
                 String[] array = str.toLowerCase().split(" ");
-                for(int i = 0; i < array.length; i++){
-                    if(pattern.matcher(array[i]).matches())
+                for (int i = 0; i < array.length; i++) {
+                    if (pattern.matcher(array[i]).matches())
                         System.out.println(array[i]);
                 }
             }

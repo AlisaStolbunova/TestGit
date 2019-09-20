@@ -1,9 +1,6 @@
 package work.home.lesson14_IO;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 /*
 Задан файл с многострочным тестом. Прочитать и вывести этот файл в консоль построчно
@@ -14,8 +11,8 @@ public class Demo_IO {
         String str = null;
         try (BufferedReader br = new BufferedReader(new FileReader("/Users/alisa/Desktop/Courses/text1.txt"))) {
             while ((str = br.readLine()) != null) {
-//                System.out.println(str);
-//                FindWord.startVowel(str);
+//                System.out.println(str); //Задан файл с многострочным тестом. Прочитать и вывести этот файл в консоль построчно
+                FindWord.startVowel(str);
                 FindWord.letterLastFirst(str);
                 DigitalSequence.maxDigitalSequence(str);
             }
@@ -26,5 +23,10 @@ public class Demo_IO {
             ex.printStackTrace();
         }
 
+        BinaryFile.writeFile();
+        BinaryFile.readFile();
+        Reverse.reverse("/Users/alisa/IdeaProjects/TestGit/src/work/home/lesson14_IO/Order.java");
     }
+
 }
+

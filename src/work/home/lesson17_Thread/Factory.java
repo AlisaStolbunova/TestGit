@@ -1,10 +1,13 @@
 package work.home.lesson17_Thread;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Factory extends Thread {
-    static Map<Parts, Integer> parts = new HashMap<>();
+    public Dump dump;
+
+    public Factory(Dump map) {
+        this.dump = map;
+    }
+
+    // static Map<Parts, Integer> parts = new HashMap<>();
 
 
     public void run() {
@@ -16,14 +19,14 @@ public class Factory extends Thread {
             nights--;
             for (int i = 0; i < Parts.values().length; i++) {
                 if (i == Parts.values().length - 1) {
-                    parts.put(Parts.values()[i], total);
+                    dump.putParts(Parts.values()[i], total);
                     break;
                 }
                 count = getRandom(total);
-                parts.put(Parts.values()[i], count);
+                dump.putParts(Parts.values()[i], count);
                 total -= count;
             }
-            parts.forEach((k, v) -> System.out.println("Parts " + k + " count " + v));
+            dump.print();
 
             while (nights > 0) {
                 Thread.sleep(100);
@@ -33,14 +36,13 @@ public class Factory extends Thread {
 
                 while (random > 0) {
                     int randomParts = (int) (Math.random() * 9);
-                   // System.out.println(randomParts);
-                    MapUtil.addPartToMap(parts, Parts.values()[randomParts], 1);
+                    dump.putParts(Parts.values()[randomParts], 1);
                     random--;
                 }
 
-                parts.forEach((k, v) -> System.out.println("Parts " + k + " count " + v));
+                dump.print();
             }
-        }catch (InterruptedException ie){
+        } catch (InterruptedException ie) {
 
         }
     }

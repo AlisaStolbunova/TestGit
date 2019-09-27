@@ -5,6 +5,12 @@ import java.util.Map;
 
 
 public class Laborer extends Thread {
+    private Dump dump;
+
+    Laborer(Dump map) {
+        this.dump = map;
+    }
+
     Map<Parts, Integer> allParts = new HashMap<>(9);
     int robots = 0;
 
@@ -15,14 +21,14 @@ public class Laborer extends Thread {
                 Thread.sleep(100);
                 nights--;
                 int random = (int) (1 + Math.random() * 4);
-                int sum = Factory.parts.values().stream().mapToInt(Integer::intValue).sum();
+                int sum = dump.sum();
                 System.out.println("Parts in a dump " + sum);
                 if (random > sum) {
                     random = sum;
                 }
-                System.out.println("Laborer gets " + random + " detail(s)");
+                System.out.println("Laborer " + Thread.currentThread().getName() + " gets " + random + " detail(s)");
                 Map<Parts, Integer> laborerParts = new HashMap<>(random);
-                getParts(laborerParts, random);
+                dump.getParts(laborerParts, random);
                 passToScientist(laborerParts);
             }
         } catch (InterruptedException ex) {
@@ -30,18 +36,6 @@ public class Laborer extends Thread {
         }
     }
 
-    private void getParts(Map<Parts, Integer> map, int random){
-        while (random > 0) {
-            int randomParts = (int) (Math.random() * 9);
-            Parts part = Parts.values()[randomParts];
-            int numberOfPart = Factory.parts.get(part);
-            if (numberOfPart > 0) {
-                MapUtil.addPartToMap(map, part, 1);
-                MapUtil.removePartFromMap(Factory.parts, part, 1);
-                random--;
-            }
-        }
-    }
 
     private void passToScientist(Map<Parts, Integer> parts) {
         parts.forEach((k, v) -> MapUtil.addPartToMap(allParts, k, v));
@@ -56,7 +50,6 @@ public class Laborer extends Thread {
                 MapUtil.removePartFromMap(allParts, value, 1);
             }
             robots++;
-   //         System.out.println(robots + "**************************");
         }
     }
 

@@ -13,5 +13,7 @@ public class ThreadDemo {
         t.start();
         MyDaemonThread dt = new MyDaemonThread();
         dt.start();
+
+
     }
 }

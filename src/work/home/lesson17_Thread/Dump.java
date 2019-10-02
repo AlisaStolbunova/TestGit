@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Dump {
-    private Map<Parts, Integer> partsInDump = new HashMap<>();
+    private  Map<Parts, Integer> partsInDump = new HashMap<>();
 
     public void putParts(Parts part, int count) {
         MapUtil.addPartToMap(partsInDump, part, count);
